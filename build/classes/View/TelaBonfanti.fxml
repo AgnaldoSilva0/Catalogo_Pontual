@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="577.0" styleClass="premium" stylesheets="@../Cascata/Background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaBonfantiController">
+   <children>
+      <Button fx:id="btMenuInicial" layoutX="442.0" layoutY="371.0" mnemonicParsing="false" text="Voltar ao Menu Inicial" />
+      <ImageView fx:id="imgLogoBonfanti" fitHeight="101.0" fitWidth="250.0" layoutX="174.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+      <Separator layoutX="8.0" layoutY="116.0" prefHeight="11.0" prefWidth="571.0" />
+      <Button fx:id="btPesquisarCodigo" defaultButton="true" layoutX="157.0" layoutY="136.0" mnemonicParsing="false" text="Pesquisar" />
+      <TextField fx:id="tfCodigo" layoutX="10.0" layoutY="136.0" promptText="Inserir Código" />
+      <TextField fx:id="tfDescricao" layoutX="226.0" layoutY="136.0" promptText="Inserir Descrição" />
+      <Button fx:id="tfDescricaoPesquisar" layoutX="375.0" layoutY="136.0" mnemonicParsing="false" text="Pesquisar" />
+      <TableView fx:id="tbTabelaPesquisa" layoutX="9.0" layoutY="171.0" prefHeight="200.0" prefWidth="571.0">
+         <columns>
+            <TableColumn fx:id="clmCodigo" prefWidth="75.0" text="Código" />
+            <TableColumn fx:id="clmDescricao" prefWidth="251.0" text="Descrição" />
+            <TableColumn fx:id="clmPrecoCompra" prefWidth="89.0" text="Preço Compra" />
+            <TableColumn fx:id="clmPrecoVenda" prefWidth="103.0" text="Preço Venda" />
+            <TableColumn fx:id="clmIpi" prefWidth="45.0" text="IPI" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

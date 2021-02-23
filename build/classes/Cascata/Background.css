@@ -1,0 +1,14 @@
+.premium {
+    -fx-background-image:url("/Icons/backgr.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.tecnologia {
+    -fx-background-image:url("/Icons/backtec.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.fundopreto {
+    -fx-background-image:url("/Icons/backPreto.jpg");
+    -fx-background-size: 100% 100%;
+}

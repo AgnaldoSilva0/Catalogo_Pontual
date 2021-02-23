@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="498.0" prefWidth="615.0" styleClass="premium" stylesheets="@../Cascata/Background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaOrcamentoController">
+   <children>
+      <TableView fx:id="tbTabela" layoutX="30.0" layoutY="84.0" prefHeight="375.0" prefWidth="567.0">
+        <columns>
+          <TableColumn fx:id="clmQuantidade" prefWidth="72.0" text="Quantidade" />
+          <TableColumn fx:id="clmCodigo" prefWidth="91.0" text="Código" />
+            <TableColumn fx:id="clmDescricao" prefWidth="252.0" text="Descrição" />
+            <TableColumn fx:id="clmPreco" minWidth="0.0" prefWidth="78.0" text="Preço" />
+            <TableColumn fx:id="clmTotal" prefWidth="72.0" text="Total" />
+        </columns>
+      </TableView>
+      <Button fx:id="btFechar" layoutX="535.0" layoutY="472.0" mnemonicParsing="false" text="Fechar" />
+      <Button fx:id="btEnviar" layoutX="473.0" layoutY="472.0" mnemonicParsing="false" text="Enviar" />
+      <Button fx:id="btSalvarOrcamento" layoutX="412.0" layoutY="472.0" mnemonicParsing="false" text="Salvar" />
+      <Button fx:id="btAdicionar" layoutX="-1.0" layoutY="113.0" mnemonicParsing="false" onAction="#onBtActionAdicionarProduto" prefHeight="25.0" prefWidth="31.0" text="+" />
+      <Button fx:id="btReduzir" layoutX="-1.0" layoutY="138.0" mnemonicParsing="false" onAction="#onBtActionDecrementarProduto" prefHeight="25.0" prefWidth="31.0" text="-" />
+      <Label layoutX="30.0" layoutY="476.0" text="Total:" textFill="WHITE" />
+      <Label fx:id="lbTotal" layoutX="74.0" layoutY="476.0" textFill="WHITE" />
+      <Button fx:id="btRemover" layoutX="-1.0" layoutY="163.0" mnemonicParsing="false" onAction="#onBtActionRemoverProduto" prefHeight="25.0" prefWidth="31.0" text="X" />
+   </children>
+</AnchorPane>

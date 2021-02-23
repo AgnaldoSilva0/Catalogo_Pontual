@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="514.0" styleClass="tecnologia" stylesheets="@../Cascata/Background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaTabelaNotasController">
+   <children>
+      <GridPane layoutX="30.0" layoutY="142.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="tfProprietarioCadastro" GridPane.columnIndex="1" />
+            <TextField fx:id="tfPlacaCadastro" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfNotaCadastro" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Proprietário:" textFill="WHITE" />
+            <Label text="Placa:" textFill="WHITE" GridPane.rowIndex="1" />
+            <Label text="Nº da Nota:" textFill="WHITE" GridPane.rowIndex="2" />
+            <Label GridPane.rowIndex="3" />
+            <Label text="Cor:" textFill="WHITE" GridPane.rowIndex="4" />
+            <Label text="Modelo do Veiculo:" textFill="WHITE" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbModelo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbCor" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Separator layoutX="14.0" layoutY="79.0" prefHeight="6.0" prefWidth="491.0" />
+      <GridPane layoutX="291.0" layoutY="142.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TextField fx:id="tfProprietarioPesquisar" GridPane.columnIndex="1" />
+            <Label text="Fonte" textFill="WHITE" />
+            <Label GridPane.rowIndex="3" />
+            <Button fx:id="btPesquisarProprietario" mnemonicParsing="false" onAction="#onBtPesquisarProprietario" text="Pesquisar" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Label layoutX="334.0" layoutY="84.0" text="Pesquisar" textFill="WHITE" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="84.0" text="Cadastrar" textFill="WHITE" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
+      <Separator layoutX="261.0" layoutY="84.0" orientation="VERTICAL" prefHeight="255.0" prefWidth="5.0" />
+      <Button fx:id="btCadastrarNota" layoutX="163.0" layoutY="304.0" mnemonicParsing="false" onAction="#onBtCadastrarNota" text="Cadastrar" />
+      <ImageView fx:id="imgLogoCadastro" fitHeight="74.0" fitWidth="233.0" layoutX="142.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgVoltar" fitHeight="25.0" fitWidth="52.0" layoutX="432.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btMenuInicial" layoutX="432.0" layoutY="350.0" mnemonicParsing="false" opacity="0.0" text="Button" />
+      <TableView fx:id="tbListaNotas" layoutX="2.0" layoutY="343.0" prefHeight="220.0" prefWidth="506.0">
+        <columns>
+          <TableColumn fx:id="clmProprietario" prefWidth="109.0" text="Proprietário" />
+          <TableColumn fx:id="clmPlaca" prefWidth="72.0" text="Placa" />
+            <TableColumn fx:id="clmNota" prefWidth="66.0" text="Nº Nota" />
+            <TableColumn fx:id="clmModelo" prefWidth="100.0" text="Modelo" />
+            <TableColumn fx:id="clmCor" prefWidth="62.0" text="Cor" />
+            <TableColumn fx:id="clmStatus" prefWidth="92.0" text="Status" />
+        </columns>
+      </TableView>
+      <Button fx:id="btFecharNota" layoutX="458.0" layoutY="317.0" mnemonicParsing="false" onAction="#onBtFinalizarNota" prefHeight="25.0" prefWidth="45.0" text="X" />
+      <Button fx:id="btAddPasta" layoutX="410.0" layoutY="317.0" mnemonicParsing="false" onAction="#onBtAdicionarPastaNota" text="Pasta" />
+      <Button fx:id="btVoltarInicio" layoutX="379.0" layoutY="317.0" mnemonicParsing="false" onAction="#onBtVoltarInicio" text="&lt;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="431.0" prefWidth="483.0" styleClass="tecnologia" stylesheets="@../Cascata/Background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaTermosController">
+   <children>
+      <TextArea editable="false" layoutX="15.0" layoutY="18.0" prefHeight="369.0" prefWidth="451.0" text="Termos de Uso:&#10;&#10;Uso livre, não comercial;&#10;Proibido a distribuição, alteração de métodos e funções BD internas;&#10;Software com intuito apenas de praticidade de preços.&#10;&#10;Alterações de preços e normas podem ocorrer de acordo com as politicas das &#10;empresas Irmãos Amalcaburio e Bonfanti;&#10;Fica por total responsabilidade do usuário a constante atualização com o &#10;representante em relação a preços.&#10;Não nos responsabilizamos por alterações não informadas.&#10;Não nos responsabilizamos por alterações no BD por parte do Usuário.&#10;Ao utilizar o Software o Usuario concorda com todos os termos acima.&#10;&#10;Especicações de BD: Format TXT&#10;Última Atualização de Preços: Março/2019&#10;&#10;Sugestões, dúvidas ou outros:&#10;Agnaldo Silva&#10;Fone: (79) 9 9651-0347&#10;E-mail: agnaldo.santos24@hotmail.com" />
+      <Button fx:id="btVoltar" layoutX="215.0" layoutY="399.0" mnemonicParsing="false" text="Voltar" />
+      <ImageView fx:id="imgVoltar" fitHeight="25.0" fitWidth="28.0" layoutX="187.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
