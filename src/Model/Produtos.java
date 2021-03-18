@@ -4,7 +4,7 @@ public class Produtos {
     
     String codigo;
     String descricao;
-    double preco, precovenda, total;
+    double preco, precovenda, total, precoUni;
     int ipi, quantidade;
 
     public Produtos(String codigo, String descricao, double preco, int ipi) {
@@ -29,6 +29,15 @@ public class Produtos {
         this.total = total;
         this.quantidade = quantidade;
     }
+
+    public Produtos(String codigo, String descricao, double preco, double precovenda) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.precovenda = precovenda;
+    }
+    
+    
 
     public String getCodigo() {
         return codigo;
@@ -55,7 +64,7 @@ public class Produtos {
     }
 
     public double getPrecovenda() {
-        return preco + preco * 100 / 100;
+        return preco * 2;
     }
 
     public int getIpi() {

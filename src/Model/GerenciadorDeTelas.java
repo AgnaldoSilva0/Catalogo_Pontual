@@ -1,12 +1,14 @@
 package Model;
 
 import Controller.TelaIncialController;
+import catalogopontual.Balcao;
 import catalogopontual.CadastrarProdutos;
 import catalogopontual.CatalogoAmalcaburio;
 import catalogopontual.CatalogoBonfanti;
 import catalogopontual.CatalogoPontual;
 import catalogopontual.Contatos;
 import catalogopontual.Orcamento;
+import catalogopontual.ProdutoAvulso;
 import catalogopontual.TabelaNotas;
 import catalogopontual.Termos;
 import java.util.logging.Level;
@@ -79,6 +81,25 @@ public class GerenciadorDeTelas {
         Orcamento instancia = new Orcamento();
         try {
             instancia.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(TelaIncialController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+    
+    public static void abrirTelaProdutoAvulso() {
+        ProdutoAvulso instancia = new ProdutoAvulso();
+        try {
+            instancia.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(TelaIncialController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+    
+    public static void abrirTelaBalcao() {
+        Balcao instancia = new Balcao();
+        try {
+            instancia.start(new Stage());
+            CatalogoPontual.getStage().close();
         } catch (Exception ex) {
             Logger.getLogger(TelaIncialController.class.getName()).log(Level.SEVERE, null, ex);
     }

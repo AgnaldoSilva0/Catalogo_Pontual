@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="551.0" prefWidth="1232.0" style="-fx-background-color: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaBalcaoController">
+   <children>
+      <TableView fx:id="tbProdutos" layoutX="14.0" layoutY="90.0" prefHeight="418.0" prefWidth="578.0">
+        <columns>
+          <TableColumn fx:id="clmCodigoP" prefWidth="66.0" text="Código" />
+          <TableColumn fx:id="clmDescricaoP" prefWidth="262.0" text="Descrição" />
+            <TableColumn fx:id="clmPrecoCompra" prefWidth="89.0" text="Preço C" />
+            <TableColumn fx:id="clmPrecoVenda" prefWidth="159.0" text="Preço V" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tbOrcamento" layoutX="643.0" layoutY="63.0" prefHeight="238.0" prefWidth="578.0">
+        <columns>
+          <TableColumn fx:id="clmCodigoO" prefWidth="75.0" text="Código" />
+          <TableColumn fx:id="clmDescricaoO" prefWidth="276.0" text="Descrição" />
+            <TableColumn fx:id="clmQuantidadeO" prefWidth="58.0" text="Quantidade" />
+            <TableColumn fx:id="clmPrecoO" prefWidth="87.0" text="Preço" />
+            <TableColumn fx:id="clmTotalO" text="Total" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tbCliente" layoutX="643.0" layoutY="308.0" prefHeight="200.0" prefWidth="578.0">
+        <columns>
+          <TableColumn fx:id="clmCliente" prefWidth="118.0" text="Cliente" />
+          <TableColumn fx:id="clmNumero" prefWidth="121.0" text="Número" />
+            <TableColumn fx:id="clmEndereco" prefWidth="70.0" text="Endereço" />
+            <TableColumn fx:id="clmCnpj" prefWidth="92.0" text="CNPJ/CPF" />
+            <TableColumn fx:id="clmCidade" prefWidth="87.0" text="Cidade" />
+        </columns>
+      </TableView>
+      <Button fx:id="btVendaAvulsa" layoutX="643.0" layoutY="515.0" mnemonicParsing="false" onAction="#onBtActionImprimirRelatorioAvulso" text="Avulso" />
+      <Button fx:id="btFinalizar" layoutX="1161.0" layoutY="515.0" mnemonicParsing="false" onAction="#onBtActionImprimirRelatorio" text="Finalizar" />
+      <Button fx:id="btAdicionarOrcamento" layoutX="530.0" layoutY="515.0" mnemonicParsing="false" onAction="#onBtActionAddProdutoOrcamento" text="Adicionar" />
+      <Button fx:id="btPesquisar" defaultButton="true" layoutX="169.0" layoutY="63.0" mnemonicParsing="false" onAction="#onBtPesquisarCodigo" text="Pesquisar" />
+      <TextField fx:id="tfPesquisar" layoutX="14.0" layoutY="63.0" />
+      <Button fx:id="btAdicionarItemAvulso" layoutX="451.0" layoutY="515.0" mnemonicParsing="false" onAction="#onBtActionAddProdutoAvulso" prefHeight="25.0" prefWidth="67.0" text="Avulsa" />
+      <Button fx:id="btCadastrarItem" layoutX="14.0" layoutY="515.0" mnemonicParsing="false" text="Cadastrar Item" />
+      <Button fx:id="btMenu" layoutX="1093.0" layoutY="515.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Menu" />
+      <Button fx:id="btSalvarOrcamento" layoutX="972.0" layoutY="515.0" mnemonicParsing="false" text="Salvar Orçamento" />
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Menu">
+            <items>
+              <MenuItem fx:id="miCarregarOrcamento" mnemonicParsing="false" onAction="#btActionCarregarOrcamento" text="Carregar Orçamento" />
+                  <MenuItem fx:id="miAtualizarOrcamento" mnemonicParsing="false" onAction="#onBtActionAtualizarOrcamento" text="Atualizar Orçamento" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="1110.0" layoutY="40.0" text="Total" />
+      <Label fx:id="lbTotal" layoutX="1139.0" layoutY="40.0" text="Label" />
+      <Button fx:id="btImcrementar" layoutX="602.0" layoutY="88.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="+" />
+      <Button fx:id="btDecrementar" layoutX="602.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="-" />
+      <Button fx:id="btExcluir" layoutX="602.0" layoutY="138.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="X" />
+      <Button fx:id="btEditarValor" layoutX="602.0" layoutY="163.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="EDV" />
+   </children>
+</AnchorPane>

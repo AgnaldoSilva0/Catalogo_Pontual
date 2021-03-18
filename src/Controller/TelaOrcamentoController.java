@@ -86,8 +86,8 @@ public class TelaOrcamentoController implements Initializable {
             double preco = tbTabela.getSelectionModel().getSelectedItem().getPreco();
             int quantidade = tbTabela.getSelectionModel().getSelectedItem().getQuantidade();
             double total = tbTabela.getSelectionModel().getSelectedItem().getTotal();
-            GerenciadorDeListasOrcamento.incrementarProduto(codigo, descricao, preco, quantidade, total);
-            GerenciadorDeListasOrcamento.addProdutoArqOrcamento();
+            GerenciadorDeListasOrcamento.incrementarProduto(1, codigo, descricao, preco, quantidade, total);
+            //GerenciadorDeListasOrcamento.addProdutoArqOrcamento();
             tbTabela.setItems(ObsMetodo());
             valorTotal();
         } catch (java.lang.RuntimeException e){
@@ -104,7 +104,7 @@ public class TelaOrcamentoController implements Initializable {
             double preco = tbTabela.getSelectionModel().getSelectedItem().getPreco();
             int quantidade = tbTabela.getSelectionModel().getSelectedItem().getQuantidade();
             double total = tbTabela.getSelectionModel().getSelectedItem().getTotal();
-            GerenciadorDeListasOrcamento.decrementarProduto(codigo, descricao, preco, quantidade, total);
+            GerenciadorDeListasOrcamento.decrementarProduto(1, codigo, descricao, preco, quantidade, total);
             GerenciadorDeListasOrcamento.addProdutoArqOrcamento();
             tbTabela.setItems(ObsMetodo());
             valorTotal();
@@ -121,7 +121,7 @@ public class TelaOrcamentoController implements Initializable {
             double preco = tbTabela.getSelectionModel().getSelectedItem().getPreco();
             int quantidade = tbTabela.getSelectionModel().getSelectedItem().getQuantidade();
             double total = tbTabela.getSelectionModel().getSelectedItem().getTotal();
-            GerenciadorDeListasOrcamento.removerProduto(codigo, descricao, preco, quantidade, total);
+            GerenciadorDeListasOrcamento.removerProduto(1, codigo, descricao, preco, quantidade, total);
             GerenciadorDeListasOrcamento.addProdutoArqOrcamento();
             tbTabela.setItems(ObsMetodo());
             valorTotal();

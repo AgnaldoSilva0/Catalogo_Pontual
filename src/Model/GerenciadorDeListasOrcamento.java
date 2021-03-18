@@ -29,34 +29,16 @@ public class GerenciadorDeListasOrcamento {
         }
     }
     
-    public static void incrementarProduto(String codigo, String descricao, double preco, int quantidade, double total) {
-        for (Produtos produto : Listas.listOrcamento) {
-            if (produto.getCodigo().toUpperCase().equals(codigo.toUpperCase())) {
-                produto.setTotal(total + produto.getPreco());
-                produto.setQuantidade(quantidade + 1);
-                return;
-            }
-        }
-        Listas.listOrcamento.add(new Produtos(codigo, descricao, preco, 1, preco));
+    public static void incrementarProduto(int descisao, String codigo, String descricao, double preco, int quantidade, double total) {
+        ModificadorLista.incrementarProduto(descisao, codigo, descricao, preco, quantidade, total);
     }
     
-    public static void decrementarProduto(String codigo, String descricao, double preco, int quantidade, double total) {
-        for (Produtos produto : Listas.listOrcamento) {
-            if (produto.getCodigo().toUpperCase().equals(codigo.toUpperCase())) {
-                produto.setTotal(total - produto.getPreco());
-                produto.setQuantidade(quantidade - 1);
-                return;
-            }
-        }
+    public static void decrementarProduto(int decisao, String codigo, String descricao, double preco, int quantidade, double total) {
+        ModificadorLista.decrementarProduto(decisao, codigo, descricao, preco, quantidade, total);
     }
     
-    public static void removerProduto(String codigo, String descricao, double preco, int quantidade, double total) {
-        for (Produtos produto : Listas.listOrcamento) {
-            if (produto.getCodigo().toUpperCase().equals(codigo.toUpperCase())) {
-                Listas.listOrcamento.remove(produto);
-                return;
-            }
-        }
+    public static void removerProduto(int decisao, String codigo, String descricao, double preco, int quantidade, double total) {
+        ModificadorLista.removerProduto(decisao, codigo, descricao, preco, quantidade, total);
     }
     
     public static void carregarOrcamento() {
@@ -120,4 +102,64 @@ public class GerenciadorDeListasOrcamento {
             Alerta.showAlert("Cancelado", "Nenhum item foi salvo", "Cancelado com Sucesso", Alert.AlertType.INFORMATION);
         }
     }
+    
+    public static void carregarOrcamentoArquivo() {
+        Window primaryStage = null;
+        FileChooser chooser = new FileChooser();
+        File file = chooser.showOpenDialog(primaryStage).getAbsoluteFile();
+  
+        try (BufferedReader br = new BufferedReader(new FileReader(file.getAbsolutePath()))) {
+            String linhaContato = br.readLine();
+            while (linhaContato != null) {
+                String[] vectLeitor = linhaContato.split(";");
+                String codigo = (vectLeitor[0]);
+                String descricao = (vectLeitor[1]);
+                double preco = Double.parseDouble(vectLeitor[2]);
+                int quantidade = Integer.parseInt(vectLeitor[3]);
+                double total = preco * quantidade;
+                Listas.listOrcamentoBalcao.add(new Produtos(codigo, descricao, preco, quantidade, total));
+                linhaContato = br.readLine();
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } 
+    }
+    
+    public static void addProdutoOrcamento(String codigo, int quantidade) {
+        for (Produtos e : Listas.listProduto) {
+            if (e.getCodigo().toUpperCase().equals(codigo.toUpperCase())) {
+                double precoUni = e.getPreco() * 2;
+                double total = precoUni * quantidade;
+                System.out.println(total);
+                //codigo, descricao, preco, quantidade, total
+                Listas.listOrcamentoBalcao.add(new Produtos(e.getCodigo(), e.getDescricao(), precoUni, quantidade,
+                total));
+            }
+        }
+    }
+    
+    public static void salvarOrcamentoBalcao() {
+        Window primaryStage = null;
+        FileChooser chooser = new FileChooser();
+        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file (*.txt)", "*.txt"));
+        File file = chooser.showSaveDialog(primaryStage);
+        
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+            for (Produtos produto : Listas.listOrcamentoBalcao) {
+                bw.write(produto.getCodigo() + ";" + produto.getDescricao() + ";" + produto.getPreco() + ";" + produto.getQuantidade());
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public static double calcularTotal(double total) {
+        for (Produtos e : Listas.listOrcamentoBalcao) {
+            total = total + e.getTotal();
+        }
+        return total;
+    }
+    
     }

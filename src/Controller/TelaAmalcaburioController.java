@@ -1,7 +1,6 @@
 package Controller;
 
 import Comando.Alerta;
-import Comando.Regras;
 import Model.GerenciadorDeListasOrcamento;
 import Model.GerenciadorDeTelas;
 import Model.Listas;
@@ -112,7 +111,7 @@ public class TelaAmalcaburioController implements Initializable {
         double preco = tbTabelaPesquisa.getSelectionModel().getSelectedItem().getPreco();
         int quantidade = tbTabelaPesquisa.getSelectionModel().getSelectedItem().getQuantidade();
         double total = tbTabelaPesquisa.getSelectionModel().getSelectedItem().getTotal();
-        GerenciadorDeListasOrcamento.incrementarProduto(codigo, descricao, preco, quantidade, total);
+        GerenciadorDeListasOrcamento.incrementarProduto(1, codigo, descricao, preco, quantidade, total);
         onBtPesquisarCodigo();
         GerenciadorDeListasOrcamento.addProdutoArqOrcamento();
         } catch (java.lang.RuntimeException e) {

@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 public class TelaIncialController implements Initializable {
 
     @FXML private ImageView imgBackground, logoBonfanti, logoCadastro, logoTabelaNotas, logoListaTelefonica, logoTermos, logoCaminhoes;
-    @FXML private Button btCatAmalcaburio, btCatBonfanti, btTabelaNotas, btFecharPrograma, btCadastrarProduto, btTermosUso, btListaTelefonica;
+    @FXML private Button btCatAmalcaburio, btCatBonfanti, btTabelaNotas, btFecharPrograma, btCadastrarProduto, btTermosUso, btListaTelefonica, btBalcao;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -48,6 +48,10 @@ public class TelaIncialController implements Initializable {
         
         btFecharPrograma.setOnMouseClicked((MouseEvent e)->{
         CatalogoPontual.getStage().close();
+    });  
+        
+        btBalcao.setOnMouseClicked((MouseEvent e)->{
+        GerenciadorDeTelas.abrirTelaBalcao();
     });  
         
     }        

@@ -138,6 +138,12 @@ public class GerenciadorDeListas {
         if (Listas.listOrcamento.isEmpty()) {
             GerenciadorDeListasOrcamento.carregarOrcamento();
         }
+        if (Listas.listCliente.isEmpty()) {
+            GerenciadorDeListaCliente.carregarCliente();
+        }
+        if (Listas.listProduto.isEmpty()) {
+            GerenciadorDeListaProduto.carregarProdutos();
+        }
     }
 
 }

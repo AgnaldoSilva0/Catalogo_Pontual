@@ -26,6 +26,7 @@
             <ImageView fx:id="logoTabelaNotas" fitHeight="45.0" fitWidth="50.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="logoListaTelefonica" fitHeight="39.0" fitWidth="50.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="logoTermos" fitHeight="45.0" fitWidth="44.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btBalcao" layoutX="36.0" layoutY="-12.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="206.0" text="Balcão" />
          </children>
       </AnchorPane>
       <ImageView fx:id="imgBackground" fitHeight="45.0" fitWidth="115.0" layoutX="230.0" layoutY="54.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
