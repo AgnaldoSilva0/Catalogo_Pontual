@@ -18,6 +18,7 @@
 	<field name="cpf" class="java.lang.String"/>
 	<field name="pagamento" class="java.lang.String"/>
 	<field name="totalGeral" class="java.lang.String"/>
+	<field name="comDesconto" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -307,6 +308,17 @@
 			<line>
 				<reportElement x="2" y="112" width="553" height="1" uuid="147a45c4-af03-4bc0-951f-522f603c83b6"/>
 			</line>
+			<textField>
+				<reportElement x="410" y="50" width="145" height="20" uuid="c76fabf0-001c-495c-86b0-aadbd0abac01"/>
+				<textFieldExpression><![CDATA[$F{comDesconto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="297" y="50" width="113" height="20" uuid="849b74ac-cbde-4151-8482-1123f57aa912"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL PAGO:]]></text>
+			</staticText>
 		</band>
 	</summary>
 </jasperReport>

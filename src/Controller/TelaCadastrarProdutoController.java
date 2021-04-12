@@ -1,11 +1,10 @@
 package Controller;
 
+import BancoDados.Insert;
 import Comando.Regras;
 import Model.Contato;
-import Model.GerenciadorDeListas;
 import Model.GerenciadorDeTelas;
 import Model.Listas;
-import Model.Produtos;
 import catalogopontual.CadastrarProdutos;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,7 +20,10 @@ public class TelaCadastrarProdutoController implements Initializable {
     @FXML public TextField tfCodigo;
     @FXML public TextField tfDescricao;
     @FXML public TextField tfPreco;
-    @FXML public TextField tfIpi;
+    @FXML
+    private TextField tfPrecoVenda;
+    @FXML
+    private TextField tfEstoque;
     @FXML private Button btCadastrar;
     @FXML private TextField tfNome;
     @FXML private TextField tfNumero;
@@ -42,16 +44,20 @@ public class TelaCadastrarProdutoController implements Initializable {
         btCadastrarContato.setOnMouseClicked((MouseEvent e) -> {
             addContato();
         });
-
+        
+        
     }
 
     private void addProdutoAmalcaburio() {
         String descricao = tfDescricao.getText();
         String codigo = tfCodigo.getText();
-        double preco = Double.parseDouble(tfPreco.getText());
-        int ipi = Integer.parseInt(tfIpi.getText());
-        Listas.listAmalcaburio.add(new Produtos(codigo, descricao, preco, ipi));
-        GerenciadorDeListas.addProdutoArqAmalcaburio();
+        double precoCompra = Double.parseDouble(tfPreco.getText());
+        double precoVenda = Double.parseDouble(tfPrecoVenda.getText());
+        int estoque = Integer.parseInt(tfEstoque.getText());
+        Insert.inserirProduto(codigo, descricao, precoCompra, precoVenda, estoque);
+        //int ipi = Integer.parseInt(tfIpi.getText());
+        //Listas.listAmalcaburio.add(new Produtos(codigo, descricao, preco, ipi));
+        //GerenciadorDeListas.addProdutoArqAmalcaburio();
         limparCamposProduto();
     }
     
@@ -65,7 +71,7 @@ public class TelaCadastrarProdutoController implements Initializable {
     }
     
     private void carregarRegras() {
-        Regras.setTextFieldInteger(tfIpi);
+        //Regras.setTextFieldInteger(tfIpi);
         Regras.setTextFieldDouble(tfPreco);
         Regras.setTextFieldInteger(tfNumero);
         Regras.setTextFieldDouble(tfDdd);
@@ -83,7 +89,7 @@ public class TelaCadastrarProdutoController implements Initializable {
         tfCodigo.clear();
         tfDescricao.clear();
         tfPreco.clear();
-        tfIpi.clear();
+        //tfIpi.clear();
     }
 
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="551.0" prefWidth="1232.0" style="-fx-background-color: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaBalcaoController">
+<AnchorPane id="AnchorPane" prefHeight="551.0" prefWidth="1232.0" style="-fx-background-color: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TelaBalcaoController">
    <children>
       <TableView fx:id="tbProdutos" layoutX="14.0" layoutY="90.0" prefHeight="418.0" prefWidth="578.0">
         <columns>
@@ -53,6 +53,7 @@
             <items>
               <MenuItem fx:id="miCarregarOrcamento" mnemonicParsing="false" onAction="#btActionCarregarOrcamento" text="Carregar Orçamento" />
                   <MenuItem fx:id="miAtualizarOrcamento" mnemonicParsing="false" onAction="#onBtActionAtualizarOrcamento" text="Atualizar Orçamento" />
+                  <MenuItem fx:id="miEditarProduto" mnemonicParsing="false" onAction="#editarProdutoSelecionado" text="Editar Item Selecionado" />
             </items>
           </Menu>
         </menus>

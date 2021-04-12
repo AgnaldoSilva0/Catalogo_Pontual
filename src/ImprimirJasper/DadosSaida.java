@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ImprimirJasper;
 
-/**
- *
- * @author Usuario
- */
 public class DadosSaida {
     
     private static String cliente, endereco, cidade, cpf, telefone, modelo, placa;
@@ -16,6 +7,7 @@ public class DadosSaida {
     int quantidade;
     double vTotal, vUnitario;
     private static double totalGeral;
+    private static double comDesconto;
     private static String pagamento = "";
 
     public DadosSaida() {
@@ -158,8 +150,13 @@ public class DadosSaida {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
-    
-    
-    
-    
+
+    public double getComDesconto() {
+        return comDesconto;
+    }
+
+    public static void setComDesconto(double comDesconto) {
+        DadosSaida.comDesconto = comDesconto;
+    }
+
 }

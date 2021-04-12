@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import BancoDados.Conexoes;
+import BancoDados.Pesquisar;
 import Comando.Alerta;
 import ImprimirJasper.DadosSaida;
 import ImprimirJasper.ImpressaoOrcamento;
@@ -12,6 +14,7 @@ import Model.Cliente;
 import Model.GerenciadorDeListasOrcamento;
 import Model.GerenciadorDeTelas;
 import Model.Listas;
+import Model.ProdutoModelEdit;
 import Model.Produtos;
 import catalogopontual.Balcao;
 import java.net.URL;
@@ -135,6 +138,9 @@ public class TelaBalcaoController implements Initializable {
     private MenuItem miAtualizarOrcamento;
 
     @FXML
+    private MenuItem miEditarProduto;
+    
+    @FXML
     private Label lbTotal;
 
     @Override
@@ -184,6 +190,7 @@ public class TelaBalcaoController implements Initializable {
         return obsPesquisa;
     }
     
+    /**Metodo para carregar orçamento*/
     @FXML
     private void btActionCarregarOrcamento() {
         Listas.listOrcamentoBalcao.clear();
@@ -250,6 +257,7 @@ public class TelaBalcaoController implements Initializable {
         total();
     }
 
+    /**Metodo para aumentar, diminuir e excluir produtos da lista de orçamento*/
     private void modificadorLista(int decisao) {
         try {
             String codigo = tbOrcamento.getSelectionModel().getSelectedItem().getCodigo();
@@ -279,6 +287,7 @@ public class TelaBalcaoController implements Initializable {
 
     }
 
+    /**Metodo para adicionar produto avulso, ele abre uma tela para adicionar o produto*/
     @FXML
     private void onBtActionAddProdutoAvulso() {
         GerenciadorDeTelas.abrirTelaProdutoAvulso();
@@ -292,6 +301,7 @@ public class TelaBalcaoController implements Initializable {
         total();
     }
     
+    /**Metodo para imprimir o relatorio com cliente cadastrado */
     @FXML
     private void onBtActionImprimirRelatorio() {
         DadosSaida.setCliente(tbCliente.getSelectionModel().getSelectedItem().getNome());
@@ -305,28 +315,40 @@ public class TelaBalcaoController implements Initializable {
         ImpressaoOrcamento.imprimir();
     }
     
+    /**Metodo para imprimir o relatorio com cliente sem cadastro */
     @FXML
     private void onBtActionImprimirRelatorioAvulso() {
-        DadosSaida.setCliente(JOptionPane.showInputDialog("Nome"));
-        DadosSaida.setEndereco("");
-        DadosSaida.setCpf("");
-        DadosSaida.setCidade("");
-        DadosSaida.setTelefone("");
-        DadosSaida.setModelo(JOptionPane.showInputDialog("Modelo"));
-        DadosSaida.setPlaca(JOptionPane.showInputDialog("Placa"));
-        ImpressaoOrcamento.addAtributoLista();
-        ImpressaoOrcamento.imprimir();
+        GerenciadorDeTelas.abrirTelaFinalizar();
     }
 
+    /**Metodo para calcular o valor total da nota*/
     private void total() {
         lbTotal.setText(String.valueOf(GerenciadorDeListasOrcamento.calcularTotal(0)));
     }
+    
     
     private void carregarTabelas() {
         tbOrcamento.setItems(ObsMetodoBalcao());
         tbCliente.setItems(ObsMetodoCliente());
         iniciarInitTabelaOrcamento();
         iniciarInitTabelaCliente();
+    }
+    
+    @FXML
+    private void editarProdutoSelecionado() {
+        tt();
+        GerenciadorDeTelas.abrirTelaEditarProduto();
+    }
+    
+    private void tt() {
+        ProdutoModelEdit produto = new ProdutoModelEdit();
+        TelaEditarProdutoController ed = new TelaEditarProdutoController();
+        produto.setCodigo(tbProdutos.getSelectionModel().getSelectedItem().getCodigo());
+        produto.setDescricao(tbProdutos.getSelectionModel().getSelectedItem().getDescricao());
+        produto.setPrecoCompra(tbProdutos.getSelectionModel().getSelectedItem().getPreco());
+        produto.setPrecoVenda(tbProdutos.getSelectionModel().getSelectedItem().getPrecovenda());
+        produto.setEstoque(tbProdutos.getSelectionModel().getSelectedItem().getEstoque());
+        
     }
 
 }

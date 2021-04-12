@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
  *
  * @author Usuario
  */
-public class TelaAddProdutoAvulsoController extends TelaBalcaoController implements Initializable {
+public class TelaAddProdutoAvulsoController implements Initializable {
 
     @FXML
     private TextField tfCodigo;

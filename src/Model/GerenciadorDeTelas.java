@@ -7,6 +7,8 @@ import catalogopontual.CatalogoAmalcaburio;
 import catalogopontual.CatalogoBonfanti;
 import catalogopontual.CatalogoPontual;
 import catalogopontual.Contatos;
+import catalogopontual.EditarProduto;
+import catalogopontual.FinalizarCompra;
 import catalogopontual.Orcamento;
 import catalogopontual.ProdutoAvulso;
 import catalogopontual.TabelaNotas;
@@ -100,6 +102,24 @@ public class GerenciadorDeTelas {
         try {
             instancia.start(new Stage());
             CatalogoPontual.getStage().close();
+        } catch (Exception ex) {
+            Logger.getLogger(TelaIncialController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+    
+    public static void abrirTelaFinalizar() {
+        FinalizarCompra instancia = new FinalizarCompra();
+        try {
+            instancia.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(TelaIncialController.class.getName()).log(Level.SEVERE, null, ex);
+    }  
+    }
+    
+    public static void abrirTelaEditarProduto() {
+        EditarProduto instancia = new EditarProduto();
+        try {
+            instancia.start(new Stage());
         } catch (Exception ex) {
             Logger.getLogger(TelaIncialController.class.getName()).log(Level.SEVERE, null, ex);
     }

@@ -5,20 +5,15 @@ public class Produtos {
     String codigo;
     String descricao;
     double preco, precovenda, total, precoUni;
-    int ipi, quantidade;
+    int ipi, quantidade, estoque;
 
+    public Produtos() {
+    }
+    
     public Produtos(String codigo, String descricao, double preco, int ipi) {
         this.codigo = codigo;
         this.descricao = descricao;
         this.preco = preco;
-        this.ipi = ipi;
-    }
-
-    public Produtos(String codigo, String descricao, double preco, double precovenda, int ipi) {
-        this.codigo = codigo;
-        this.descricao = descricao;
-        this.preco = preco;
-        this.precovenda = precovenda;
         this.ipi = ipi;
     }
     
@@ -37,7 +32,13 @@ public class Produtos {
         this.precovenda = precovenda;
     }
     
-    
+    public Produtos(String codigo, String descricao, double preco, double precovenda, int estoque) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.precovenda = precovenda;
+        this.estoque = estoque;
+    }
 
     public String getCodigo() {
         return codigo;
@@ -64,7 +65,11 @@ public class Produtos {
     }
 
     public double getPrecovenda() {
-        return preco * 2;
+        return precovenda;
+    }
+
+    public void setPrecovenda(double precovenda) {
+        this.precovenda = precovenda;
     }
 
     public int getIpi() {
@@ -90,5 +95,23 @@ public class Produtos {
     public void setTotal(double total) {
         this.total = total;
     }
+
+    public int getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(int estoque) {
+        this.estoque = estoque;
+    }
+
+    public double getPrecoUni() {
+        return precoUni;
+    }
+
+    public void setPrecoUni(double precoUni) {
+        this.precoUni = precoUni;
+    }
+    
+    
     
 }

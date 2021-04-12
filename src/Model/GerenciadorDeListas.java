@@ -1,5 +1,6 @@
 package Model;
 
+import BancoDados.Pesquisar;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -142,7 +143,7 @@ public class GerenciadorDeListas {
             GerenciadorDeListaCliente.carregarCliente();
         }
         if (Listas.listProduto.isEmpty()) {
-            GerenciadorDeListaProduto.carregarProdutos();
+            Pesquisar.pesquisarProduto();
         }
     }
 

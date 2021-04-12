@@ -129,7 +129,7 @@ public class GerenciadorDeListasOrcamento {
     public static void addProdutoOrcamento(String codigo, int quantidade) {
         for (Produtos e : Listas.listProduto) {
             if (e.getCodigo().toUpperCase().equals(codigo.toUpperCase())) {
-                double precoUni = e.getPreco() * 2;
+                double precoUni = e.getPrecovenda();
                 double total = precoUni * quantidade;
                 System.out.println(total);
                 //codigo, descricao, preco, quantidade, total
